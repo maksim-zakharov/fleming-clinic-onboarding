@@ -1,0 +1,466 @@
+.sub-head{
+    background-color: #40AAA4;
+    color: white;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.material-textfield {
+    position: relative;
+}
+
+.textbox_label {
+    position: absolute;
+    font-size: 1rem;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: gray;
+    padding: 0 0.3rem;
+    margin: 0 0.5rem;
+    transition: .1s ease-out;
+    transform-origin: left top;
+    pointer-events: none;
+}
+.textbox_input {
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1rem 0.7rem;
+    color: gray;
+    transition: 0.1s ease-out;
+    width: 40rem;
+}
+.textbox_input:focus {
+    border-color: #76C7C1;
+}
+.textbox_input:focus + label {
+    color: #76C7C1;
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+.textbox_input:not(:placeholder-shown) + label {
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+body,
+input,
+select,
+textarea,
+body * {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+body::after, body::before,
+input::after,
+input::before,
+select::after,
+select::before,
+textarea::after,
+textarea::before,
+body *::after,
+body *::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: -webkit-linear-gradient(top, #f2f2f2, #e6e6e6);
+    background-image: linear-gradient(top, #f2f2f2, #e6e6e6);
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.container{
+    position: relative;
+    max-width: 55rem;
+    margin: 5rem auto;
+    background: #fff;
+    width: 100%;
+    padding: 3rem 5rem 0;
+    border-radius: 30px;
+}
+
+/*.container_text{*/
+/*    position: relative;*/
+/*    max-width: 50rem;*/
+/*    margin: 0 auto 1.2rem;*/
+/*    background: #fff;*/
+/*    width: 100%;*/
+/*    border-radius: 1px;*/
+/*}*/
+
+.form-group {
+    position: relative;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
+}
+
+.form-inline > .form-group,
+
+.checkbox .form-help, .form-radio .form-help, .form-group .form-help {
+    position: absolute;
+    width: 100%;
+}
+
+.form-group input {
+    height: 1.9rem;
+}
+.form-group textarea {
+    resize: none;
+}
+.form-group select {
+    width: 100%;
+    font-size: 1rem;
+    height: 1.6rem;
+    padding: 0.125rem 0.125rem 0.0625rem;
+    background: none;
+    border: none;
+    line-height: 1.6;
+    box-shadow: none;
+}
+.form-group .control-label {
+    position: absolute;
+    top: 0.25rem;
+    pointer-events: none;
+    padding-left: 0.125rem;
+    z-index: 1;
+    color: #b3b3b3;
+    font-size: 1rem;
+    font-weight: normal;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+}
+.form-group .bar {
+    position: relative;
+    border-bottom: 0.0625rem solid #999;
+    display: block;
+}
+.form-group .bar::before {
+    content: '';
+    height: 0.125rem;
+    width: 0;
+    left: 50%;
+    bottom: -0.0625rem;
+    position: absolute;
+    background: #76C7C1;
+    -webkit-transition: left 0.28s ease, width 0.28s ease;
+    transition: left 0.28s ease, width 0.28s ease;
+    z-index: 2;
+}
+.form-group input,
+.form-group textarea {
+    display: block;
+    background: none;
+    padding: 0.125rem 0.125rem 0.0625rem;
+    font-size: 1rem;
+    border-width: 0;
+    border-color: transparent;
+    line-height: 1.9;
+    width: 100%;
+    color: transparent;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+    box-shadow: none;
+}
+.form-group input[type="file"] {
+    line-height: 1;
+}
+.form-group input[type="file"] ~ .bar {
+    display: none;
+}
+.form-group select,
+.form-group input:focus,
+.form-group input:valid,
+.form-group input.form-file,
+.form-group input.has-value,
+.form-group textarea:focus,
+.form-group textarea:valid,
+.form-group textarea.form-file,
+.form-group textarea.has-value {
+    color: #333;
+}
+.form-group select ~ .control-label,
+.form-group input:focus ~ .control-label,
+.form-group input:valid ~ .control-label,
+.form-group input.form-file ~ .control-label,
+.form-group input.has-value ~ .control-label,
+.form-group textarea:focus ~ .control-label,
+.form-group textarea:valid ~ .control-label,
+.form-group textarea.form-file ~ .control-label,
+.form-group textarea.has-value ~ .control-label {
+    font-size: 0.8rem;
+    color: gray;
+    top: -1rem;
+    left: 0;
+}
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+}
+.form-group select:focus ~ .control-label,
+.form-group input:focus ~ .control-label,
+.form-group textarea:focus ~ .control-label {
+    color: #76C7C1;
+}
+.form-group select:focus ~ .bar::before,
+.form-group input:focus ~ .bar::before,
+.form-group textarea:focus ~ .bar::before {
+    width: 100%;
+    left: 0;
+}
+
+.has-error .legend.legend, .has-error.form-group .control-label.control-label {
+    color: #d9534f;
+}
+.has-error.form-group .form-help,
+.has-error.form-group .helper, .has-error.checkbox .form-help,
+.has-error.checkbox .helper, .has-error.radio .form-help,
+.has-error.radio .helper, .has-error.form-radio .form-help,
+.has-error.form-radio .helper {
+    color: #d9534f;
+}
+
+.govern{
+    margin-top: 3.0rem;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    outline: 0;
+    font-size: 16px;
+    color: #212121;
+    background: transparent;
+    transition: border-color 0.2s;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1rem 0.7rem;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 16px;
+    cursor: text;
+    top: 42px;
+}
+
+label,
+.form__field:focus ~ .form__label {
+    position: absolute;
+    font-size: 1rem;
+    left: 0;
+    top: 12px;
+    transform: translateY(-50%);
+    background-color: white;
+    color: gray;
+    padding: 0 0.3rem;
+    margin: 0 0.5rem;
+    transition: .1s ease-out;
+    transform-origin: left top;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.form__field:focus ~ .form__label {
+    color: #76C7C1;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    border-bottom: 2px solid #40AAA4;
+}
+
+.start{
+    padding: 25px 10rem;
+    margin-bottom: 3rem;
+    margin-top: 2.5rem;
+    border-radius: 20rem;
+}
+.start:not(:disabled){
+    background-color: #76C7C1;
+}
+.start:hover{
+    background-color: #40AAA4;
+}
+
+
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 55rem; /* Could be more or less, depending on screen size */
+    align-items: center;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.single-room{
+    border-radius: 10px;
+    width: 40rem;
+    padding: 1rem 1.8rem ;
+    background-color: #40AAA4;
+    color: white;
+}
+----
+
+.pure-material-button-outlined {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: solid 1px;
+    border-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.24);
+    border-radius: 4px;
+    padding: 0 16px;
+    min-width: 64px;
+    height: 36px;
+    vertical-align: middle;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    background-color: transparent;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 34px;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+}
+
+.pure-material-button-outlined::-moz-focus-inner {
+    border: none;
+}
+
+/* Overlay */
+.pure-material-button-outlined::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: currentColor;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+/* Ripple */
+.pure-material-button-outlined::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    padding: 50%;
+    width: 32px;
+    height: 32px;
+    background-color: currentColor;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1) ;
+    transition: opacity 1s, transform 0.5s;
+}
+
+/* Hover, Focus */
+.pure-material-button-outlined:hover::before {
+    opacity: 0.04;
+}
+
+.pure-material-button-outlined:focus::before {
+    opacity: 0.12;
+}
+
+.pure-material-button-outlined:hover:focus::before {
+    opacity: 0.16;
+}
+
+/* Active */
+.pure-material-button-outlined:active::after {
+    opacity: 0.16;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0s;
+}
+
+/* Disabled */
+.pure-material-button-outlined:disabled {
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    background-color: transparent;
+    cursor: initial;
+}
+
+.pure-material-button-outlined:disabled::before {
+    opacity: 0;
+}
+
+.pure-material-button-outlined:disabled::after {
+    opacity: 0;
+}
+
+.reg_btn:hover{
+    background-color: #40AAA4;
+    border-color: #76C7C1;
+}

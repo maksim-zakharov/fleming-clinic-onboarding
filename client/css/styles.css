@@ -1,0 +1,138 @@
+html,
+.index_body {
+    height: 100%;
+}
+
+body {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #F9F9F9;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 40rem;
+    padding: 40px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.terms.form-signin {
+    width: 1300px;
+    padding: 40px;
+    max-width: 50%;
+    /*margin: 0 20px;*/
+    background-color: white;
+    border-radius: 0px;
+}
+
+.lan {
+    padding: 15px 50px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    color: #76C7C1;
+    border-color: #76C7C1;
+}
+
+.lan:active:focus {
+    background-color: black;
+}
+
+.lan_text {
+    margin-bottom: 20px;
+}
+
+.start {
+    margin-top: 40px;
+    padding: 25px 60px;
+}
+
+.lan:hover {
+    background-color: white;
+    color: #40AAA4;
+    border-color: #40AAA4;
+}
+
+.lan:focus {
+    border-color: #40AAA4;
+}
+
+.lan:not(:disabled):not(.disabled).active, .lan:not(:disabled):not(.disabled):active, .show > .lan.dropdown-toggle {
+    background-color: #40AAA4;
+    border-color: #40AAA4;
+}
+
+.start:not(:disabled) {
+    background-color: #76C7C1;
+}
+
+.start:hover {
+    background-color: #40AAA4;
+}
+
+.trans_img {
+    width: 150px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+.accept {
+    margin: 80px 10px 10px 0px;
+    padding: 25px 300px;
+}
+
+.accept:not(:disabled) {
+    background-color: #76C7C1;
+}
+
+.accept:hover {
+    background-color: #40AAA4;
+}
+
+.ant-result {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+}
+
+.ant-result-icon {
+    display: none;
+}
+
+.upload-modal {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ant-select .ant-select-arrow, .ant-select .ant-select-clear {
+    top: 4rem;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector, .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    font-size: 1rem !important;
+    outline: none !important;
+    border: 1px solid gray !important;
+    border-radius: 5px !important;
+    padding: 1rem 0.7rem !important;
+    color: gray !important;
+    transition: 0.1s ease-out !important;
+    width: 40rem !important;
+    height: 4rem !important;
+    margin-top: 2rem !important;
+}
