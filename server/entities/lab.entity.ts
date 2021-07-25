@@ -60,6 +60,12 @@ export class LabEntity extends BaseEntity {
     nullable: true
   })
   labCRFileUrl: string;
+
+  @Column({
+    type: 'text',
+    nullable: true
+  })
+  mohFileUrl: string;
   // Focal
   @Column({
     type: 'varchar',

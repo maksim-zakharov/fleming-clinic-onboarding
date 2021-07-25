@@ -23,6 +23,7 @@ const Index = () => {
     pcrTestTypes: [],
     members: [],
     labCRFile: [],
+    mohFile: [],
     clinicCRFile: [],
   });
 
@@ -72,12 +73,17 @@ const Index = () => {
         NotificationService.error(error.message);
       } else {
         await api.uploadLabCRFile(id, state.labCRFile, true);
+        await api.uploadMohFile(id, state.mohFile);
         history.push('/thanks');
       }
       setLoading(false);
     } else {
       if (!state.labCRFile.length) {
         NotificationService.error('At least one Lab CR file is required');
+        return;
+      }
+      if (!state.mohFile.length) {
+        NotificationService.error('At least one MoH Letter is required');
         return;
       }
       if (!state.clinicCRFile.length) {
@@ -92,6 +98,7 @@ const Index = () => {
         NotificationService.error(error.message);
       } else {
         await api.uploadLabCRFile(id, state.labCRFile);
+        await api.uploadMohFile(id, state.mohFile);
         await api.uploadClinicCRFile(id, state.clinicCRFile);
         history.push('/thanks');
       }
@@ -232,7 +239,18 @@ const Index = () => {
             />
 
             <Section
-              title="Clinic Bank Details"
+              title="MoH Letter of Approval"
+              description="Please upload a copy of the letter of approval from the Ministry of Health."
+            />
+            <Uploader
+              title="Please Upload a copy of MoH letter of approval"
+              onUpload={(text) =>
+                setState((prevState) => ({ ...prevState, mohFile: text }))
+              }
+            />
+
+            <Section
+              title="Clinic’s Contracted Lab Details"
               description="Please enter the details of your clinic’s bank account. eMushrif will use these details to set up the reconciliation process with your clinic. Reconciliation between eMushrif and the clinc will happen weekly.
 
 eMushrif will collect the clients' advanced payments, deduct its 15%  fee, and passes on the clincs' payments."
@@ -332,6 +350,17 @@ Please enter the details of a minimum of 2 and a maximum of 5 staff members. "
               title="Please Upload a copy of CR (1MB Max)"
               onUpload={(text) =>
                 setState((prevState) => ({ ...prevState, labCRFile: text }))
+              }
+            />
+
+            <Section
+              title="MoH Letter of Approval"
+              description="Please upload a copy of the letter of approval from the Ministry of Health."
+            />
+            <Uploader
+              title="Please Upload a copy of MoH letter of approval"
+              onUpload={(text) =>
+                setState((prevState) => ({ ...prevState, mohFile: text }))
               }
             />
             <Section

@@ -27,6 +27,26 @@ export const uploadClinicCRFile = (
     })
     .then((response) => response.data);
 };
+export const uploadMohFile = (
+  clinicId: number,
+  files: any[],
+  isLab?: boolean,
+): Promise<ErrorResponse> => {
+  const formData = new FormData();
+  formData.append('files', files[0]);
+
+  return axios
+    .post(
+      isLab ? `/api/labs/${clinicId}/mohCRFile` : `/api/${clinicId}/mohCRFile`,
+      formData,
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      },
+    )
+    .then((response) => response.data);
+};
 export const uploadLabCRFile = (
   clinicId: number,
   files: any[],

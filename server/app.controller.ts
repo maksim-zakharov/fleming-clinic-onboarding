@@ -33,6 +33,13 @@ export class AppController {
     return this.appService.uploadClinicCRFile(id, files);
   }
 
+  @Post('/:id/mohCRFile')
+  @UseInterceptors(FileInterceptor('files'))
+  uploadMohCRFile(@Param() { id }, @UploadedFile() files) {
+    return this.appService.uploadMohCRFile(id, files);
+  }
+
+
   @Post('/:id/labCRFile')
   @UseInterceptors(FileInterceptor('files'))
   async uploadLabCRFile(@Param() { id }, @UploadedFile() files) {

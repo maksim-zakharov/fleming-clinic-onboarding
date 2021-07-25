@@ -59,6 +59,16 @@ export class AppService {
     return this.labRepository.save(newHotel);
   }
 
+  async uploadMohCRFile(clinicId: number, file: any) {
+    const existClinic = await this.repository.findOne(clinicId);
+    if (!existClinic) {
+      throw new HttpException(`The Clinic is not registered`, HttpStatus.OK);
+    }
+    const { Location } = await this.s3Service.upload(clinicId, 'mohLetter', file);
+    existClinic.mohFileUrl = Location;
+    await this.repository.save(existClinic);
+  }
+
   async uploadClinicCRFile(clinicId: number, file: any) {
     const existClinic = await this.repository.findOne(clinicId);
     if (!existClinic) {

@@ -65,6 +65,12 @@ export class ClinicEntity extends BaseEntity {
   clinicCRFileUrl: string;
 
   @Column({
+    type: 'text',
+    nullable: true
+  })
+  mohFileUrl: string;
+
+  @Column({
     type: 'varchar',
   })
   clinicDescription: string;
