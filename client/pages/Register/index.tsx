@@ -222,7 +222,7 @@ const Index = () => {
             />
 
             <Section
-              title="Clinic’s Contracted Lab Details"
+              title="Clinic Bank Details"
               description="Please enter the details of you the lab, contracted to test the samples collected by your clinic."
             />
             <Input {...onInput(state, setState, 'labName')} label="Lab Name" />
@@ -406,6 +406,7 @@ Please enter the details of a minimum of 2 and a maximum of 5 staff members. "
         </div>
       </div>
       <NewStaffModal
+        members={members}
         isVisible={isStaffModalVisible}
         onOk={addStaffMember}
         onClose={onClose}

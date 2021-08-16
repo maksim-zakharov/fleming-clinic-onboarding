@@ -4,9 +4,9 @@ import { useState } from 'react';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import { RegisterMemberDto } from '../../services/dto/register-member.dto';
+import * as NotificationService from '../../services/notification.service';
 
-const NewStaffModal = (props) => {
-  const { isVisible, onOk, onClose } = props;
+const NewStaffModal = ({ isVisible, onOk, onClose, members }) => {
   const [details, setDetails] = useState<RegisterMemberDto>({
     email: '',
     name: '',
@@ -14,6 +14,16 @@ const NewStaffModal = (props) => {
   });
 
   const addItem = () => {
+    if (members.some(member => member.email.toLowerCase() === details.email.toLowerCase())) {
+      NotificationService.error('Staff member with same email already exist');
+      return;
+    }
+
+    if (members.some(member => member.phoneNumber.toLowerCase() === details.phoneNumber.toLowerCase())) {
+      NotificationService.error('Staff member with same phone number already exist');
+      return;
+    }
+
     onOk(details);
     setDetails({
       email: '',

@@ -57,7 +57,7 @@ const RoomDetailsModal = (props) => {
           {...onInput(state, setState, 'pcrTestName')}
         />
         <Input
-          label="Expected Hotel Inventory"
+          label="PCR Test Name (Arabic)"
           {...onInput(state, setState, 'pcrTestNameArab')}
         />
         <Input

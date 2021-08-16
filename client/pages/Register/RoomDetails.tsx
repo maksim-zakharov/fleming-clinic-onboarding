@@ -26,11 +26,11 @@ const RoomDetails: React.FC<{ details: PcrTestTypesDto[]; onDelete }> = ({
               <div>{item.price} CMR</div>
             </div>
             <div className="row">
-              <div>Room Description</div>
+              <div>PCR Test Description</div>
               <div>{item.pcrTestDescription}</div>
             </div>
             <div className="row">
-              <div>Room Description (Arabic)</div>
+              <div>PCR Test Description (Arabic)</div>
               <div>{item.pcrTestDescriptionArab}</div>
             </div>
             <button className="delete-btn" onClick={() => onDelete(item)}>

@@ -8,7 +8,7 @@ import {
   IsFQDN,
   IsMobilePhone,
   IsNotEmpty,
-  IsNumber, ValidateNested,
+  IsNumber, MinLength, ValidateNested,
 } from 'class-validator';
 import { RegisterMemberDto } from './register-member.dto';
 import { RegisterRoomTypesDto } from './register-room-types.dto';
@@ -30,9 +30,15 @@ export class RegisterClinicDto {
   @IsNotEmpty({
     message: 'Clinic Description is required',
   })
+  @MinLength(100,{
+    message: 'Clinic Description must be longer than 100 characters',
+  })
   clinicDescription: string;
   @IsNotEmpty({
     message: 'Clinic Description Arab is required',
+  })
+  @MinLength(100,{
+    message: 'Clinic Description Arab must be longer than 100 characters',
   })
   clinicDescriptionArab: string;
   @IsNotEmpty({
