@@ -22,14 +22,6 @@ export class RegisterLabDto {
   })
   labCRNumber: string;
   @IsNotEmpty({
-    message: 'Contact Person is required',
-  })
-  contactPerson: string;
-  @IsNotEmpty({
-    message: 'Contact Details is required',
-  })
-  contactDetails: string;
-  @IsNotEmpty({
     message: 'Authorized Signatory Name is required',
   })
   authorizedSignatoryName: string;

@@ -37,14 +37,6 @@ export class LabEntity extends BaseEntity {
   @Column({
     type: 'varchar',
   })
-  contactPerson: string;
-  @Column({
-    type: 'varchar',
-  })
-  contactDetails: string;
-  @Column({
-    type: 'varchar',
-  })
   authorizedSignatoryName: string;
   @Column({
     type: 'varchar',

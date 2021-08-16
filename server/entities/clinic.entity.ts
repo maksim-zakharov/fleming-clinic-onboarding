@@ -98,14 +98,6 @@ export class ClinicEntity extends BaseEntity {
     type: 'varchar',
   })
   city: string;
-  @Column({
-    type: 'varchar',
-  })
-  contactPerson: string;
-  @Column({
-    type: 'varchar',
-  })
-  contactDetails: string;
   // Focal
   @Column({
     type: 'varchar',

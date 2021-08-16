@@ -195,14 +195,6 @@ const Index = () => {
             />
             <Input {...onInput(state, setState, 'clinicCRNumber')} label="CR Number" />
             <Input
-              {...onInput(state, setState, 'contactPerson')}
-              label="Contact Person (as listed on CR)"
-            />
-            <Input
-              {...onInput(state, setState, 'contactDetails')}
-              label="Contact Details (as listed on CR)"
-            />
-            <Input
               {...onInput(state, setState, 'signatoryName')}
               label="Authorized Signatory Name"
             />
@@ -251,9 +243,7 @@ const Index = () => {
 
             <Section
               title="Clinic’s Contracted Lab Details"
-              description="Please enter the details of your clinic’s bank account. eMushrif will use these details to set up the reconciliation process with your clinic. Reconciliation between eMushrif and the clinc will happen weekly.
-
-eMushrif will collect the clients' advanced payments, deduct its 15%  fee, and passes on the clincs' payments."
+              description="Please enter the details of the contracted lab that would be responsible for the collection of your clinic samples."
             />
             <Input {...onInput(state, setState, 'bankName')} label="Bank Name" />
             <Input {...onInput(state, setState, 'branch')} label="Branch" />
@@ -316,7 +306,7 @@ Please enter the details of a minimum of 2 and a maximum of 5 staff members. "
             />
             <Section
               title="Lab CR Details"
-              description="Please enter the details of your clinc’s Company Registration. eMushrif will use these details to draft a business contract between your lab and eMushrif."
+              description="Please enter the details of your lab's Company Registration. eMushrif will use these details to draft a business contract between your lab and eMushrif."
             />
             <Input
               {...onInput(state, setState, 'labCompanyName')}
@@ -325,14 +315,6 @@ Please enter the details of a minimum of 2 and a maximum of 5 staff members. "
             <Input
               {...onInput(state, setState, 'labCRNumber')}
               label="CR Number"
-            />
-            <Input
-              {...onInput(state, setState, 'contactPerson')}
-              label="Contact Person (as listed on CR)"
-            />
-            <Input
-              {...onInput(state, setState, 'contactDetails')}
-              label="Contact Details (as listed on CR)"
             />
             <Input
               {...onInput(state, setState, 'authorizedSignatoryName')}
@@ -365,7 +347,7 @@ Please enter the details of a minimum of 2 and a maximum of 5 staff members. "
             />
             <Section
               title="Lab Focal Point"
-              description="Please share the name and the contact details of the focal point within your clinic. The focal point needs to be a person that eMushrif can communicate with when needed."
+              description="Please share the name and the contact details of the focal point within your lab. The focal point needs to be a person that eMushrif can communicate with when needed."
             />
             <Input
               {...onInput(state, setState, 'focalPointName')}
